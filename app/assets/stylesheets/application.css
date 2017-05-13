@@ -1,0 +1,259 @@
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+/*
+ *= require font-awesome
+ */
+body {
+    background-color: #f2f2f2;
+    font-family: 'Lato';
+    font-weight:300;
+    font-size: 16px;
+    color: #555;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow: touch;
+
+    margin-top: 70px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Raleway';
+    font-weight: 300;
+    color: #333;
+
+}
+
+p {
+    line-height: 28px;
+    margin-bottom: 25px;
+
+}
+
+.centered {
+    text-align: center;
+}
+
+a {
+    color: #f85c37;
+}
+
+a:hover, a:focus {
+    color: #7b7b7b;
+    text-decoration: none;
+    outline: 0;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.navbar {
+    font-weight: 800;
+    font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar-inverse {
+    background: #2d2d2d;
+    border-color: #2d2d2d;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+    background-color: #ff7878;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #999;
+    font-weight: bolder;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+#headerwrap {
+    background: url(Firefox_wallpaper.png) no-repeat center top;
+    background-size: 100%;
+    margin-top: -10px;
+    padding-top: 20px;
+    text-align: center;
+    background-attachment: relative;
+    background-position: center center;
+    min-height: 500px;
+    width: 100%;
+    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-sie: cover;
+    -webkit-background-size:;
+    background-size: cover;
+}
+
+#headerwrap h1 {
+    margin-top: 100px;
+    color: white;
+    font-size: 70px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+#headerwrap h2 {
+    color: white;
+    font-size: 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#headerwrap .btn-default {
+    background-color: #ff7878;
+    font-size: 20px;
+    border: 0;
+    padding: 15px 25px;
+    border-radius: 30px;
+    color: white;
+    font-family: 'Tibetan Machine Uni';
+    font-weight: 800;
+}
+#headerwrap .btn-default:hover {
+    background-color: #ce4333;
+    border: 1px solid  #ad3729;
+}
+
+.w {
+    padding-top: 35px;
+}
+
+.w h4 {
+    font-size:25px;
+}
+
+#dg {
+    background: #e0e0e0;
+    padding-top: 70px;
+    text-align: center;
+}
+
+#dg h4 {
+    font-size: 40px;
+}
+
+.tilt {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.tilt:hover {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+}
+
+.wb {
+    padding-top: 35px;
+    margin-bottom: 0;
+}
+
+.wb h4 {
+    font-size: 35px;
+}
+
+#lg {
+    background: #ebebeb;
+    padding-top: 70px ;
+    padding-bottom: 70px;
+    text-align: center;
+}
+
+#lg h4{
+    font-size: 45px;
+    padding-bottom: 20px;
+}
+
+#r {
+    background: #ff7878;
+    padding-top:70px;
+    padding-bottom: 70px;
+}
+
+#r h4 {
+    color: white;
+    font-size: 45px;
+}
+
+#r p {
+    color: white;
+}
+
+#f {
+    background: #2d2d2d;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+#f i {
+    color: #bdbdbd;
+    font-size: 30px;
+    padding: 20px;
+}
+
+#f i:hover {
+    color: #ff7878;
+}
+
+#ab {
+    background: url('f8103819da656ccffb9dd9906832a251.jpg') no-repeat center top;
+    min-height: 900px;
+    -webkit-background-size:;
+    background-size: 100%;
+    width: 100%;
+    background-position: center center;
+    background-attachment: relative;
+    margin-top: -10px;
+    padding-top: 20px;
+}
+
+#ab h1 {
+    color: white;
+    font-size: 65px;
+    font-family: 'Raleway';
+}
+
+#ab p {
+    color: white;
+    font-size: 25px;
+}
+
+#ab h2 {
+    color: white;
+    font-size: 45px;
+    padding-top: 160px;
+}
+
+
+#fs p{
+    padding-top: 180px;
+    font-size: 18px;
+}
