@@ -3,10 +3,10 @@
     = menu_item 'Home', root_path
     = menu_item 'About', about_path
     - if current_user
-      = menu_item 'Log out', destroy_user_session
+      = menu_item 'Log out', destroy_user_session_path, method: :delete
     - else
       = menu_item 'Sign in', new_user_session_path
     - if current_user
-      = menu_item 'Profile'
+      = menu_item 'Profile', profile_path
     = menu_item fa_icon "twitter"
     = menu_item fa_icon "camera-retro"
