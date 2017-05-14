@@ -3,7 +3,10 @@
     div class="row centered"
       div class="col-lg-8 col-lg-offset-2"
         h1 Welcome to my application
-        h2= link_to 'Sign in', new_user_session_path, class: 'btn btn-default'
+        - if current_user
+          h2= link_to 'Ask a question', new_question_path, class: 'btn btn-default'
+        - else
+          h2= link_to 'Sign in', new_user_session_path, class: 'btn btn-default'
 
 div class='container w'
   div class='row centered'
