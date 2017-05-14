@@ -1,0 +1,15 @@
+#nf
+  .container
+    div class='row centered'
+      h1 Ask a question
+      = form_for @question do |f|
+        .field
+        = f.label :title
+        br
+        = f.text_field :title, class: 'form-control'
+        .field
+        = f.label :body
+        br
+        = f.text_area :body, class: 'form-control'
+        .field
+        = f.submit 'Add question'
