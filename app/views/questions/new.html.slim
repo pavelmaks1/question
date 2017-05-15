@@ -12,4 +12,12 @@
         br
         = f.text_area :body, class: 'form-control'
         .field
-        = f.submit 'Add question'
+        p Attachments
+        .field
+         = f.fields_for :attachments do |a|
+          = a.label :file
+          = a.file_field :file
+
+
+
+        p= f.submit 'Add question'

@@ -7,6 +7,6 @@
     - else
       = menu_item 'Sign in', new_user_session_path
     - if current_user
-      = menu_item 'Profile', profile_path
+      = menu_item 'Profile', user_path(current_user)
     = menu_item fa_icon "twitter"
     = menu_item fa_icon "camera-retro"
