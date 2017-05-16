@@ -1,6 +1,6 @@
 = nav_bar fixed: :top, inverse: true,  brand: 'Republic', responsive: true do
   = menu_group pull: :right do
-    = menu_item 'Home', root_path
+    = menu_item 'Questions', questions_path
     = menu_item 'About', about_path
     - if current_user
       = menu_item 'Log out', destroy_user_session_path, method: :delete

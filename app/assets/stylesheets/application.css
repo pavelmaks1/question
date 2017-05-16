@@ -276,3 +276,35 @@ hr {
     height: 70px;
     font-size: 24px;
 }
+
+#same {
+    background: url('f8103819da656ccffb9dd9906832a251.jpg');
+    min-height: 900px;
+    -webkit-background-size:;
+    background-size: 100%;
+    width: 100%;
+    background-position: center center;
+    background-attachment: relative;
+    margin-top: -10px;
+    padding-top: 20px;
+}
+
+#same h1 {
+    color: black;
+    border-radius: 10px;
+    background-color: white ;
+    padding: 20px 15px;
+}
+
+#same a {
+    color: black;
+}
+
+#same a:hover {
+    color: #f85c37;
+}
+
+#profile {
+    padding-top: 50px;
+    padding-bottom: 40px;
+}

@@ -1,12 +1,13 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
+
   def index
     @questions = Question.all
   end
 
   def new
     @question = Question.new
-    @question.attachments.build
+
   end
 
   def create
@@ -44,7 +45,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:title, :body, :author_id, attachments_attributes: [:file])
+    params.require(:question).permit(:title, :body, :author_id, :file)
   end
 
   def set_question

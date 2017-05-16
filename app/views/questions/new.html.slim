@@ -2,22 +2,4 @@
   .container
     div class='row centered'
       h1 Ask a question
-      = form_for @question do |f|
-        .field
-        = f.label :title
-        br
-        = f.text_field :title, class: 'form-control'
-        .field
-        = f.label :body
-        br
-        = f.text_area :body, class: 'form-control'
-        .field
-        p Attachments
-        .field
-         = f.fields_for :attachments do |a|
-          = a.label :file
-          = a.file_field :file
-
-
-
-        p= f.submit 'Add question'
+      = render 'form'

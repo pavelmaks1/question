@@ -20,6 +20,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'font-awesome-rails'
 gem 'carrierwave'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'byebug', platform: :mri

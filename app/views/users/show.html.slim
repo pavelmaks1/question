@@ -1,4 +1,10 @@
-.container
-  div class='row left'
-    h3 #{current_user.first_name} #{current_user.last_name}
-    h4 email: #{current_user.email}
+- content_for :title, 'My page'
+#profile
+  .container
+    div class='row left'
+      h3 #{@user.first_name} #{@user.last_name}
+      = image_tag @user.avatar.url(:thumb) unless @user.avatar.blank?
+      h4 email: #{@user.email}
+
+
+    = link_to 'Profile Settings' , edit_user_registration_path, class: 'btn btn-default' if @user == current_user

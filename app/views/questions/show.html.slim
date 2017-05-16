@@ -1,7 +1,17 @@
-p= @question.title
-p= @question.body
-p= link_to @question.author.first_name, user_path(@question.author)
+- content_for :title, @question.title
+.container
+  div class='row centered'
+    h1= @question.title
+    p= @question.body
 
-ul
-  - @question.attachments.each do |a|
-    li= a.file.file.filename
+
+  p Attachments:
+  ul
+
+      li= image_tag @question.file.url(:thumb) unless @question.file.blank?
+
+  p Author:
+  p= link_to @question.author.first_name, user_path(@question.author)
+  = link_to :Delete, question_path(@question) , method: :delete
+  br
+  = link_to :Edit, edit_question_path(@question)
