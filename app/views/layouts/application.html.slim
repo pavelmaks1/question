@@ -9,7 +9,8 @@ html
 
   body
     = render 'layouts/header'
+    - flash.each do |type, message|
+      .flash
+        = message
     = yield
     = render 'layouts/footer'
-    p class="notice"= notice
-    p class="alert"= alert

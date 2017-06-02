@@ -1,5 +1,5 @@
 class AddQuestionIdToAnswers < ActiveRecord::Migration[5.0]
   def change
-    add_reference :answers, :question, foreign_key: true
+    add_column :answers, :question_id, :string
   end
 end

@@ -17,17 +17,8 @@ ActiveRecord::Schema.define(version: 20170516130518) do
     t.integer  "author_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "question_id"
+    t.string   "question_id"
     t.index ["author_id"], name: "index_answers_on_author_id"
-    t.index ["question_id"], name: "index_answers_on_question_id"
-  end
-
-  create_table "attachments", force: :cascade do |t|
-    t.string   "file"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "question_id"
-    t.index ["question_id"], name: "index_attachments_on_question_id"
   end
 
   create_table "questions", force: :cascade do |t|

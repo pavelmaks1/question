@@ -1,17 +1,33 @@
 - content_for :title, @question.title
-.container
-  div class='row centered'
-    h1= @question.title
-    p= @question.body
+#show
+  .container
+    div class='row centered'
+      h1= @question.title
+      p= @question.body
 
+    - if @question.file
+      p = image_tag @question.file.url(:thumb) unless @question.file.blank?
 
-  p Attachments:
-  ul
+    div class='row left'
+      h5 Author:
+      p= link_to @question.author.first_name, user_path(@question.author)
 
-      li= image_tag @question.file.url(:thumb) unless @question.file.blank?
+    - if current_user == @question.author
 
-  p Author:
-  p= link_to @question.author.first_name, user_path(@question.author)
-  = link_to :Delete, question_path(@question) , method: :delete
-  br
-  = link_to :Edit, edit_question_path(@question)
+      = link_to :Delete, question_path(@question) , method: :delete, class: 'btn btn-default'
+      br
+      = link_to :Edit, edit_question_path(@question), class: 'btn btn-default'
+
+    hr
+
+    .answers
+      = render 'answers'
+
+    h2 Add new answer:
+    = form_for [@question, @answer], remote: true do |f|
+      p
+        = f.label :body, 'Your answer:'
+        = f.text_area :body
+      .field
+        = f.submit :Create
+

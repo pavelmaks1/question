@@ -21,6 +21,9 @@ gem 'devise'
 gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'rails-controller-testing'
+gem 'private_pub'
+gem 'thin'
 
 group :development, :test do
   gem 'byebug', platform: :mri

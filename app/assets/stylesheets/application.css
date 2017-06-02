@@ -103,7 +103,7 @@ hr {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-sie: cover;
-    -webkit-background-size:;
+    -webkit-background-size: 0px;
     background-size: cover;
 }
 
@@ -226,7 +226,7 @@ hr {
 #ab {
     background: url('f8103819da656ccffb9dd9906832a251.jpg') no-repeat center top;
     min-height: 900px;
-    -webkit-background-size:;
+    -webkit-background-size:0px;
     background-size: 100%;
     width: 100%;
     background-position: center center;
@@ -280,7 +280,7 @@ hr {
 #same {
     background: url('f8103819da656ccffb9dd9906832a251.jpg');
     min-height: 900px;
-    -webkit-background-size:;
+    -webkit-background-size:0px;
     background-size: 100%;
     width: 100%;
     background-position: center center;
@@ -307,4 +307,12 @@ hr {
 #profile {
     padding-top: 50px;
     padding-bottom: 40px;
+}
+
+#show {
+    margin-bottom: 50px;
+}
+
+#show .btn {
+    width: 100px;
 }
