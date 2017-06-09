@@ -24,6 +24,7 @@ gem 'mini_magick'
 gem 'rails-controller-testing'
 gem 'private_pub'
 gem 'thin'
+gem 'remotipart'
 
 group :development, :test do
   gem 'byebug', platform: :mri

@@ -3,10 +3,14 @@ h1 Answers
   - if answer.persisted?
     p
       = answer.body
+      p= image_tag answer.answerfile.url(:thumb) unless answer.answerfile.blank?
       br
       = link_to 'Edit', '', class: 'edit-answer-link', data: { answer_id: answer.id } if user_signed_in?
       p
         = form_for [@question, answer], remote: true , html: { id: "edit-answer-#{answer.id}" } do |f|
           = f.label :body, 'Answer'
           = f.text_area :body
+          p
+            = f.label :answerfile
+            = f.file_field :answerfile
           = f.submit 'Save'

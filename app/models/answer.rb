@@ -1,6 +1,6 @@
 class Answer < ApplicationRecord
 
-  mount_uploader :file, FileUploader
+  mount_uploader :answerfile, AnswerfileUploader
 
   validates_presence_of :body
   belongs_to :author, foreign_key: 'author_id' , class_name: 'User'

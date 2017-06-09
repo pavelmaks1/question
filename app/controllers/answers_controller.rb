@@ -1,5 +1,6 @@
 class AnswersController < ApplicationController
 
+
   def create
     @question = Question.find(params[:question_id])
     @answer = @question.answers.create(answers_params)
@@ -8,8 +9,6 @@ class AnswersController < ApplicationController
 
     if @answer.save
       flash[:notice] = 'Your answer has successfully created'
-    else
-      render :new
     end
   end
 
@@ -28,6 +27,6 @@ class AnswersController < ApplicationController
   private
 
   def answers_params
-    params.require(:answer).permit(:body, :question_id, :author_id, :file)
+    params.require(:answer).permit(:body, :question_id, :author_id, :answerfile)
   end
 end

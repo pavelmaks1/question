@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20170609134827) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "question_id"
-    t.string   "file"
+    t.string   "answerfile"
     t.index ["author_id"], name: "index_answers_on_author_id"
   end
 
