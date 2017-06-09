@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170516130518) do
+ActiveRecord::Schema.define(version: 20170609134827) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "body"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20170516130518) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "question_id"
+    t.string   "file"
     t.index ["author_id"], name: "index_answers_on_author_id"
   end
 

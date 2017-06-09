@@ -1,4 +1,4 @@
-require_realative 'rails_helper'
+require 'rails_helper'
 
 feature 'Add files to answer' do
 
