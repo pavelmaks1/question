@@ -4,12 +4,17 @@ class AnswersController < ApplicationController
   def create
     @question = Question.find(params[:question_id])
     @answer = @question.answers.create(answers_params)
-
     @answer.author = current_user
 
-    if @answer.save
-      flash[:notice] = 'Your answer has successfully created'
+    respond_to do |format|
+      if @answer.save
+        format.js
+      else
+        format.js
+      end
     end
+
+
   end
 
   def update
