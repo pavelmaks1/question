@@ -1,4 +1,7 @@
-class AnswersController < ApplicationController
+class AnswersController < InheritedResources::Base
+actions :create, :update
+
+belongs_to :question
 
 
   def create
@@ -24,10 +27,6 @@ class AnswersController < ApplicationController
 
   end
 
-  def destroy
-    @answer = Answer.find(params[:id])
-    @answer.destroy
-  end
 
   private
 

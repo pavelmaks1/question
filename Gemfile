@@ -25,6 +25,7 @@ gem 'rails-controller-testing'
 gem 'private_pub'
 gem 'thin'
 gem 'remotipart'
+gem 'inherited_resources'
 
 group :development, :test do
   gem 'byebug', platform: :mri
