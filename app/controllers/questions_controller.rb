@@ -1,16 +1,14 @@
 class QuestionsController < InheritedResources::Base
   before_action :authenticate_user!, except: [:index, :show]
   before_action :build_answer , only: :show
+  before_action :build_author, only: :create
 
 
-  def create
-    @question= Question.create(question_params)
-    @question.author = current_user
-    create!
+  protected
+
+  def build_author
+    build_resource.author = current_user
   end
-
-  private
-
 
   def build_answer
     @answer = resource.answers.build

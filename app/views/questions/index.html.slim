@@ -2,7 +2,7 @@
 
 #same
   .container
-    - @questions.each do |question|
+    - collection.each do |question|
       h1= link_to question.title, question_path(question)
       hr
 

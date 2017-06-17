@@ -21,7 +21,7 @@
     hr
 
     .answers
-      = render 'answers'
+      = render 'answers', question: resource
 
     h2 Add new answer:
     = form_for [@question, @answer], remote: true do |f|
