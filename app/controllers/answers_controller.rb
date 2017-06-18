@@ -6,13 +6,14 @@ class AnswersController < InheritedResources::Base
 
 
 
+
   private
 
   def build_author
     build_resource.author = current_user
   end
 
-  def answers_params
+  def answer_params
     params.require(:answer).permit(:body, :question_id, :author_id, :answerfile)
   end
 end
