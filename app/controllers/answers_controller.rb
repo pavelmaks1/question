@@ -1,14 +1,10 @@
 class AnswersController < InheritedResources::Base
-  actions :create, :update
+  actions :create, :update, :destroy
   before_action :build_author, only: :create
   belongs_to :question
   respond_to :js, :json
 
 
-  def update
-    @question = Question.find(params[:question_id])
-    
-  end
 
   private
 
