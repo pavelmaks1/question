@@ -1,37 +1,43 @@
 - content_for :title, @question.title
 #show
-  .container
-    div class='row centered'
-      h1= @question.title
-      p= @question.body
+  .question
+    .container
+      div class='row centered'
+        h1= @question.title
+        p= @question.body
 
-    - if @question.file
-      p = image_tag @question.file.url(:thumb) unless @question.file.blank?
+      - if @question.file
+        p = image_tag @question.file.url(:thumb) unless @question.file.blank?
 
-    div class='row left'
-      h5 Author:
-      p= link_to @question.author.first_name, user_path(@question.author)
+      div class='row left'
+        h5 Author:
+        p= link_to @question.author.first_name, user_path(@question.author)
 
-    - if current_user == @question.author
+      - if current_user == @question.author
 
-      = link_to :Delete, question_path(@question) , method: :delete, class: 'btn btn-default'
-      br
-      = link_to :Edit, edit_question_path(@question), class: 'btn btn-default'
+        = link_to :Delete, question_path(@question) , method: :delete, class: 'btn btn-default'
+        br
+        = link_to :Edit, edit_question_path(@question), class: 'btn btn-default'
 
-    hr
+      hr
 
-    .answers
-      = render 'answers', question: resource
+      p Comments:
+      .comments
+        = render 'comments/list', parent: resource
 
-    h2 Add new answer:
-    = form_for [@question, @answer], remote: true do |f|
-      p
-        = f.label :body, 'Your answer:'
-        = f.text_area :body
-      p
-        = f.label :answerfile
-        = f.file_field :answerfile
-      .field
-        = f.submit :Create
+
+      .answers
+        = render 'answers', question: resource
+
+      h2 Add new answer:
+      = form_for [@question, @answer], remote: true do |f|
+        p
+          = f.label :body, 'Your answer:'
+          = f.text_area :body
+        p
+          = f.label :answerfile
+          = f.file_field :answerfile
+        .field
+          = f.submit :Create
 
 = subscribe_to "/questions/#{@question.id}/answers"

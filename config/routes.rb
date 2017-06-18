@@ -6,6 +6,17 @@ Rails.application.routes.draw do
 
 
   devise_for :users, controllers: { registrations: 'registrations' }
+
+  concern :commentable do
+    resources :comments
+  end
+
+  resources :questions, concerns: :commentable do
+    resources :answers
+  end
+
+  resources :answers, only: [], concerns: :commentable
+
   resources :users, only: [:show]
   root 'static_pages#index'
 
