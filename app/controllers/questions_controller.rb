@@ -1,21 +1,46 @@
-class QuestionsController < InheritedResources::Base
+class QuestionsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :build_answer , only: :show
-  before_action :build_author, only: :create
+  before_action :set_question, only: [:show, :edit, :update, :destroy]
+  before_action :build_answer, only: :show
 
+  respond_to :html , :json
 
-  protected
-
-  def build_author
-    build_resource.author = current_user
+  def index
+    respond_with(@questions = Question.all)
   end
 
+  def show
+    respond_with @question
+  end
+
+  def new
+    respond_with(@question = Question.new)
+  end
+
+  def edit
+  end
+
+  def create
+    respond_with(@question = Question.create(question_params))
+  end
+
+  def update
+    @question.update(question_params)
+    respond_with @question
+  end
+
+  def destroy
+    respond_with(@question.destroy)
+  end
+
+  private
+
   def build_answer
-    @answer = resource.answers.build
+    @answer = @question.answers.build
   end
 
   def question_params
-    params.require(:question).permit(:title, :body, :author_id, :file)
+    params.require(:question).permit(:title, :body, :file)
   end
 
   def set_question

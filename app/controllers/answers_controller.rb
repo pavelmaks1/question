@@ -1,16 +1,26 @@
-class AnswersController < InheritedResources::Base
-  actions :create, :update, :destroy
-  before_action :build_author, only: :create
-  belongs_to :question
-  respond_to :js, :json
+class AnswersController < ApplicationController
+  before_action :authenticate_user!
+  before_action :load_answer, only: :update
 
+  respond_to :js
 
+  def create
+    @question = Question.find(params[:question_id])
+    @answer= @question.answers.build(answer_params)
+    @answer.author = current_user
+    @answer.save
+    # respond_with(@answer= @question.answers.create(answer_params))
+  end
 
+  def update
+    @answer.update(answer_params)
+    respond_with @answer
+  end
 
   private
 
-  def build_author
-    build_resource.author = current_user
+  def load_answer
+    @answer = Answer.find(params[:id])
   end
 
   def answer_params

@@ -10,10 +10,7 @@
         p = image_tag @question.file.url(:thumb) unless @question.file.blank?
 
       div class='row left'
-        h5 Author:
-        p= link_to @question.author.first_name, user_path(@question.author)
 
-      - if current_user == @question.author
 
         = link_to :Delete, question_path(@question) , method: :delete, class: 'btn btn-default'
         br
@@ -23,11 +20,11 @@
 
       p Comments:
       .comments
-        = render 'comments/list', parent: resource
+        = render 'comments/list', parent: @question
 
-
-      .answers
-        = render 'answers', question: resource
+  .container
+    .answers data={question_id: "#{@question.id}"}
+      = render 'answers', question: @question
 
       h2 Add new answer:
       = form_for [@question, @answer], remote: true do |f|

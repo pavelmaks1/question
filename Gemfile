@@ -26,6 +26,9 @@ gem 'private_pub'
 gem 'thin'
 gem 'remotipart'
 gem 'inherited_resources'
+gem 'responders'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'byebug', platform: :mri

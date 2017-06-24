@@ -5,17 +5,16 @@ Rails.application.routes.draw do
   end
 
 
-  devise_for :users, controllers: { registrations: 'registrations' }
+  devise_for :users, controllers: { registrations: 'registrations' , omniauth_callbacks: 'omniauth_callbacks' }
 
   concern :commentable do
     resources :comments
   end
 
-  resources :questions, concerns: :commentable do
-    resources :answers
+  resources :questions, concerns: :commentable, shallow: true do
+    resources :answers, concerns: :commentable
   end
 
-  resources :answers, only: [], concerns: :commentable
 
   resources :users, only: [:show]
   root 'static_pages#index'

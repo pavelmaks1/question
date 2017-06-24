@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170618094246) do
+ActiveRecord::Schema.define(version: 20170619150534) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "body"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 20170618094246) do
     t.string   "question_id"
     t.string   "answerfile"
     t.index ["author_id"], name: "index_answers_on_author_id"
+  end
+
+  create_table "authorizations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_authorizations_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -34,11 +43,9 @@ ActiveRecord::Schema.define(version: 20170618094246) do
   create_table "questions", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
-    t.integer  "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "file"
-    t.index ["author_id"], name: "index_questions_on_author_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,6 +1,6 @@
 - parent.comments.each do |comment|
+  - cache comment do
   p= comment.body
-
 
 = form_for [parent, parent.comments.build], remote: true do |f|
   p
